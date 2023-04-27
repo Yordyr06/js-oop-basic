@@ -8,6 +8,7 @@
 */ 
 
 
+
 // Objeto literal que es instancia del objeto __proto__ 
 const yordy = {
   name: 'Yordy',
@@ -31,6 +32,9 @@ const yordy = {
 yordy.name = 'Yordy Leonardo Almonte Ruiz'; 
 yordy.age += 1;
 
+
+
+// Prototipos con la sintaxis de javascript
 function Student(name, age, approvedCourses) {
   this.name = name;
   this.age = age;
@@ -54,3 +58,38 @@ const farrachel = new Student(
     'Curso de Responsive Design: Maquetación Mobile First',
   ],
 );
+
+
+
+// Prototipos con sintaxis de clases (similar a otros lenguajes de programación)
+class Estudiante {
+  constructor({
+    nombre,
+    edad,
+    cursosAprobados = [],
+    email,
+    twitter,
+    facebook,
+    instagram,
+  }) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.cursosAprobados = cursosAprobados;
+    this.email = email;
+
+    this.ejemplo = function (argumento) {
+      // ...
+    }
+  }
+
+  aprobarCurso(curso) {
+    this.cursosAprobados.push(curso);
+  }
+}
+
+const daryThen = new Estudiante ({
+  email: 'darythen@outlook.com',
+  nombre: 'Darian Then',
+  edad: 20,
+  }
+)
