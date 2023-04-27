@@ -1,1 +1,1 @@
-# js-poo-basic
+# js-oop-basic
