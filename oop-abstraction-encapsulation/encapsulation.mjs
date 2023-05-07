@@ -1,3 +1,5 @@
+import { Comment } from "../opp-inheritance-polymorphism/polymorphism.mjs";
+
 /*
 
 Encapsulamiento:
@@ -25,9 +27,13 @@ export class Courses {
   constructor({
     name,
     classes = [],
+    isFree = false,
+    language = 'spanish',
   }) {
     this._name = name;
     this.classes = classes;
+    this.isFree = isFree;
+    this.language = language;
   };
 
   // Implementacion del getter. El getter es un metodo que adquiere el valor de un atributo.
@@ -78,6 +84,15 @@ export class Student {
     };
     this.approveCourses = approveCourses;
     this.learningPaths = learningPaths;
+  };
+
+  postComment(commentContent) {
+    const comment = new Comment({
+      content: commentContent,
+      studentName: this.name,
+    });
+
+    comment.post();
   };
 };
 
